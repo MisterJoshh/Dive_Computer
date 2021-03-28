@@ -54,7 +54,7 @@ class Divescreen(QDialog):
         self.dive_depth.setText('0')
         self.start_button.clicked.connect(self.start) #method
         self.end_button.clicked.connect(self.end)
-        self.db = Database()
+        self.db = Database(dive_log.db)
         self.dive_number = self.db.diveNum()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.showTime)
