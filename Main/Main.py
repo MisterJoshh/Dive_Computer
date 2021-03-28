@@ -54,7 +54,7 @@ class Divescreen(QDialog):
         self.dive_depth.setText('0')
         self.start_button.clicked.connect(self.start) #method
         self.end_button.clicked.connect(self.end)
-        self.db = Database(dive_log.db)
+        self.db = Database('dive_log.db')
         self.dive_number = self.db.diveNum()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.showTime)
@@ -106,13 +106,14 @@ class Divescreen(QDialog):
             int(round((self.sens.read()[0]-self.atmos)/1000,0)),
             self.seconds,
             int(round(self.sens.read()[1],0))))
-            print(self.dive_list)
+            
     
     def end(self):
         self.flag1 = False
         self.flag2 = False
         self.flag3 = False
         self.dth,self.dtm,self.dt=0,0,0
+        self.db.insert(self.dive_list)
 
 
     def start(self):

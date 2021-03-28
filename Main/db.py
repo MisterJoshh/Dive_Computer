@@ -9,7 +9,7 @@ class Database:
         self.con.commit()
 
     def insert(self,list):
-        self.cur.executemany('INSERT INTO dive (NULL,?,?,?)',list)
+        self.cur.executemany('INSERT INTO dive (?,?,?,?)',list)
         self.con.commit()
 
     def diveNum(self):
@@ -19,5 +19,3 @@ class Database:
             return 0
         else:
             return int(maxid[0]+1)
-
-            
