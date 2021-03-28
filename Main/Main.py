@@ -29,6 +29,12 @@ class HomeScreen(QDialog):
         super().__init__()
         loadUi('UI/homescreen.ui',self)
         self.divebutton.clicked.connect(self.divefunction)
+        self.log_button.clicked.connect(self.gotoLog)
+
+    def gotoLog(self):
+        log=Logbook()
+        widget.addWidget(log)
+        widget.setCurrentIndex(widget.currentIndex()+2)
 
 
     def divefunction(self):
@@ -54,8 +60,9 @@ class Divescreen(QDialog):
         self.dive_depth.setText('0')
         self.start_button.clicked.connect(self.start) #method
         self.end_button.clicked.connect(self.end)
+        self.back_button.clicked.connect(self.backtoHome)
         self.db = Database('dive_log.db')
-        self.dive_number = self.db.diveNum()
+        self.dive_number = 1
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.showTime)
         self.timer.timeout.connect(self.showDepth)
@@ -106,6 +113,7 @@ class Divescreen(QDialog):
             int(round((self.sens.read()[0]-self.atmos)/1000,0)),
             self.seconds,
             int(round(self.sens.read()[1],0))))
+
             
     
     def end(self):
@@ -114,12 +122,27 @@ class Divescreen(QDialog):
         self.flag3 = False
         self.dth,self.dtm,self.dt=0,0,0
         self.db.insert(self.dive_list)
+        self.dive_list=[]
 
 
     def start(self):
         self.flag1 = True
         self.flag2 = True
         self.flag3 = True
+        self.dive_number = self.db.diveNum()
+        print(self.dive_number)
+    
+    def backtoHome(self):
+        widget.setCurrentIndex(widget.currentIndex()-1)
+
+class Logbook(QDialog):
+    def __init__(self):
+        super().__init__()
+        loadUi('UI/logbook.ui',self)
+        
+    def 
+
+
 
 
 app=QApplication(sys.argv)

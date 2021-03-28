@@ -26,9 +26,9 @@ background-color: rgb(255, 255, 255);</string>
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-10</y>
-     <width>681</width>
+     <x>-20</x>
+     <y>0</y>
+     <width>741</width>
      <height>41</height>
     </rect>
    </property>
@@ -44,10 +44,10 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
+      <x>30</x>
+      <y>10</y>
       <width>231</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -55,51 +55,19 @@ background-color: rgb(255, 255, 255);</string>
 </string>
     </property>
     <property name="text">
-     <string>Josh's computer</string>
+     <string>LogBook</string>
     </property>
    </widget>
   </widget>
-  <widget class="QSplitter" name="splitter">
+  <widget class="QListWidget" name="list_dives">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>60</y>
-     <width>641</width>
-     <height>211</height>
+     <y>50</y>
+     <width>501</width>
+     <height>231</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-   <widget class="QPushButton" name="divebutton">
-    <property name="styleSheet">
-     <string notr="true">
-color: rgb(0,0,0);
-
-background-color: rgb(0,0,0);</string>
-    </property>
-    <property name="text">
-     <string>Dive</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="log_button">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(11, 95, 157);
-color: rgb(0,0,0);</string>
-    </property>
-    <property name="text">
-     <string>Log</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="settingsbutton">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(11, 95, 157);
-color: rgb(0,0,0);</string>
-    </property>
-    <property name="text">
-     <string>Settings</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources/>
