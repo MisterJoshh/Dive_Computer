@@ -123,6 +123,7 @@ class Divescreen(QDialog):
         self.dth,self.dtm,self.dt=0,0,0
         self.db.insert(self.dive_list)
         self.dive_list=[]
+        self.seconds=0
 
 
     def start(self):
@@ -139,8 +140,11 @@ class Logbook(QDialog):
     def __init__(self):
         super().__init__()
         loadUi('UI/logbook.ui',self)
+        self.db = Database('dive_log.db')
         
-    def 
+
+        
+    
 
 
 
