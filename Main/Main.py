@@ -141,6 +141,11 @@ class Logbook(QDialog):
         super().__init__()
         loadUi('UI/logbook.ui',self)
         self.db = Database('dive_log.db')
+        self.list_dives.addItems(self.db.popLog())
+        self.back_button.clicked.connect(self.backtoMain)
+
+    def backtoMain(self):
+        widget.setCurrentIndex(widget.currentIndex()-2)
         
 
         

@@ -69,6 +69,19 @@ background-color: rgb(255, 255, 255);</string>
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>110</y>
+     <width>99</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
