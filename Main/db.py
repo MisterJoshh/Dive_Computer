@@ -26,7 +26,7 @@ class Database:
         df_log = df_table.groupby('dive_num').agg({'depth':'max','time':'max','temp':'min'})
         log = []
         for index in range((df_log.shape[0])):
-            log.append(f'Dive number:{index+1} Max Depth:{df_log.iloc[index,0]} Length:{df_log.iloc[index,1]} Bottom temp:{df_log.iloc[index,2]} ')
+            log.append(f'{index+1}.    Max Depth: {df_log.iloc[index,0]}m    Length: {df_log.iloc[index,1]}s    Bottom temp: {df_log.iloc[index,2]}c ')
         return log
 
 if __name__=="__main__":
